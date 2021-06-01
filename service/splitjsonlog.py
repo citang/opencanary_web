@@ -1,11 +1,5 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-  Author: pirogue 
-  Purpose: 解析客户端请求过来的日志
-  Site: http://pirogue.org 
-  Created: 2018-08-03 18:00:23
-"""
 
 from dbs.dal.LogOperate import LogOp
 from service.emailservice import send_mail, switches

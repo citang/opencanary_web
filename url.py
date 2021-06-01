@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#coding:utf-8
+# coding:utf-8
 """
   Author:  pirogue --<p1r06u3@gmail.com>
   Purpose: URL路由配置文件

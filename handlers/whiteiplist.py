@@ -1,11 +1,5 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-  Author: pirogue 
-  Purpose: 获取白名单ip
-  Site: http://pirogue.org 
-  Created: 2018-08-27 15:35:43
-"""
 
 
 import tornado

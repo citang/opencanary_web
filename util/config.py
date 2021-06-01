@@ -1,11 +1,5 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-  Author: pirogue 
-  Purpose: 邮件、白名单配置
-  Site: http://pirogue.org 
-  Created: 2018-08-08 14:59:54
-"""
 
 import configparser
 import sys

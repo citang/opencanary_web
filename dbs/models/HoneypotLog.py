@@ -1,23 +1,17 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-  Author: pirogue 
-  Purpose: 蜜罐日志表
-  Site: http://pirogue.org 
-  Created: 2018-02-01 15:07:05
-"""
-
 
 from sqlalchemy import Column, String, Integer, Unicode, TIMESTAMP, Boolean
-from sqlalchemy.orm import relationship, backref
+
 import sys
+
 sys.path.append("..")
-from dbs.initdb import Base, engine, DBSession
+from dbs.initdb import Base, engine
 
 
 class OpencanaryLog(Base):
     __tablename__ = 'OpencanaryLog'
-    
+
     id = Column(Integer, autoincrement=True, primary_key=True)
     dst_host = Column(String(50), nullable=False)
     dst_port = Column(Integer, nullable=False)
@@ -86,15 +80,10 @@ class OpencanaryLog(Base):
 def init_db():
     Base.metadata.create_all(engine)
 
+
 def drop_db():
     Base.metadata.drop_all(engine)
 
-if __name__=="__main__":
-    init_db()
-    print('create OpencanaryLog table')
-
-    # drop_db()
-    # print('Drop OpencanaryLog table')
 """
 CREATE TABLE `OpencanaryLog` (
 	id INTEGER NOT NULL AUTO_INCREMENT,

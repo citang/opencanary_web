@@ -1,11 +1,5 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-  Author: pirogue 
-  Purpose: 主机状态处理
-  Site: http://pirogue.org 
-  Created: 2018-11-01 20:39:31
-"""
 
 from dbs.dal.Host import HostOp
 import hashlib

@@ -1,48 +1,19 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-  Author: pirogue 
-  Purpose: 折线图和饼图
-  Site: http://pirogue.org 
-  Created: 2018-08-27 18:29:06
-"""
 
 from dbs.dal.LogOperate import LogOp
 import datetime
-import sys
-if sys.version[0] == '2':
-    reload(sys)
-    sys.setdefaultencoding("utf-8")
-else:
-    from importlib import reload
 
 nums = LogOp()
-
-
-
-# sourceDataz = [
-# { "month": 'Jan', "attack": 0, "white": 0 },
-# { "month": 'Feb', "attack": 0, "white": 0 },
-# { "month": 'Mar', "attack": 0, "white": 0 },
-# { "month": 'Apr', "attack": 0, "white": 0 },
-# { "month": 'May', "attack": 0, "white": 0 },
-# { "month": 'Jun', "attack": 0, "white": 0 },
-# { "month": 'Jul', "attack": 0, "white": 0 },
-# { "month": 'Aug', "attack": 0, "white": 0 },
-# { "month": 'Sep', "attack": 0, "white": 0 },
-# { "month": 'Oct', "attack": 0, "white": 0 },
-# { "month": 'Nov', "attack": 0, "white": 0 },
-# { "month": 'Dec', "attack": 0, "white": 0 },
-# ]
 
 
 def attack_num(sourceDataz):
     """ 每月攻击数量统计 """
     # 当前的年份
     now = datetime.datetime.now().year
-    #now=2019
+    # now=2019
     attack_res = nums.attack_select_num(now)
-    print("attack_res:"+str(attack_res))
+    print("attack_res:" + str(attack_res))
     # [(5, 1), (7, 2), (8, 258), (9, 3)]
     if attack_res:
         for at in attack_res:
@@ -131,7 +102,7 @@ def pie_num(piesoureData):
     # 当前的年份
     now = datetime.datetime.now().year
     """ 饼图数据 """
-    #now=2019
+    # now=2019
     data_pie = nums.pie_select_num(now)
     print(data_pie)
     if data_pie:

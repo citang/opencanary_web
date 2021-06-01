@@ -4,7 +4,7 @@
         <div class="collapse-btn" @click="collapseChage">
             <i class="el-icon-menu"></i>
         </div>
-        <div class="logo">蜜罐后台管理</div>
+        <div class="logo">蜜罐监控中心</div>
         <div class="header-right">
             <div class="header-user-con">
                 <!-- 全屏显示 -->
@@ -30,12 +30,12 @@
                         {{username}} <i class="el-icon-caret-bottom"></i>
                     </span>
                     <el-dropdown-menu slot="dropdown">
-                        <a href="http://pirogue.org" target="_blank">
-                            <el-dropdown-item>关于作者</el-dropdown-item>
-                        </a>
-                        <a href="https://github.com/p1r06u3" target="_blank">
-                            <el-dropdown-item>项目仓库</el-dropdown-item>
-                        </a>
+<!--                        <a href="http://pirogue.org" target="_blank">-->
+<!--                            <el-dropdown-item>关于作者</el-dropdown-item>-->
+<!--                        </a>-->
+<!--                        <a href="https://github.com/p1r06u3" target="_blank">-->
+<!--                            <el-dropdown-item>项目仓库</el-dropdown-item>-->
+<!--                        </a>-->
                         <el-dropdown-item divided  command="loginout">退出登录</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>

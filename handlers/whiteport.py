@@ -1,12 +1,5 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-  Author: pirogue 
-  Purpose: 获取白名单port
-  Site: http://pirogue.org 
-  Created: 2018-08-27 15:35:43
-"""
-
 
 import tornado
 from handlers.base import BaseHandler
@@ -27,8 +20,7 @@ class WhiteportHandler(BaseHandler):
         # json.dumps(line_res)
         self.write(res)
 
-    
-    def write_error(self,status_code,**kwargs):
+    def write_error(self, status_code, **kwargs):
         self.write("Unable to parse JSON.")
 
     def post(self):
@@ -43,4 +35,4 @@ class WhiteportHandler(BaseHandler):
         else:
             self.json_args = None
             message = 'Unable to parse JSON.'
-            self.send_error(status_code=400) # 向浏览器发送错误状态码，会调用write_error
+            self.send_error(status_code=400)  # 向浏览器发送错误状态码，会调用write_error

@@ -7,17 +7,16 @@
   Created: 2018-10-30 20:34:58
 """
 
-
-from sqlalchemy import Column, String, Integer, Unicode, TIMESTAMP, Boolean, UniqueConstraint
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy import Column, String, TIMESTAMP, UniqueConstraint
 import sys
+
 sys.path.append("..")
-from dbs.initdb import Base, engine, DBSession
+from dbs.initdb import Base, engine
 
 
 class Host(Base):
     __tablename__ = 'Host'
-    
+
     id = Column(String(50), primary_key=True)
     last_time = Column(TIMESTAMP, nullable=False)
     hostname = Column(String(50), nullable=False)
@@ -30,15 +29,15 @@ class Host(Base):
         # 设置联合索引
         # Index('uix_hostname_ip', 'hostname', 'ip'),
     )
+
+
 def init_db():
     Base.metadata.create_all(engine)
+
 
 def drop_db():
     Base.metadata.drop_all(engine)
 
-if __name__=="__main__":
-    init_db()
-    print('create Host table')
 
 """
 CREATE TABLE `Host` (

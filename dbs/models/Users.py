@@ -1,47 +1,27 @@
 #!/usr/bin/env python
-#coding:utf-8
-"""
-  Author:  pirogue --<p1r06u3@gmail.com>
-  Purpose: 用户关系模型
-  Created: 2018年08月07日16:48:39
-  Site:    http://pirogue.org
-"""
+# coding:utf-8
 
 
 from datetime import datetime
-from sqlalchemy import Column, String, Integer, Unicode, TIMESTAMP
-from sqlalchemy.orm import relationship, backref
-# import sys
-# sys.path.append("..")
-from dbs.initdb import Base, engine, DBSession
+from sqlalchemy import Column, String, Integer, TIMESTAMP
+from dbs.initdb import Base, engine
 
 
 class User(Base):
     __tablename__ = 'User'
-    
+
     id = Column(Integer, autoincrement=True, primary_key=True)
     username = Column(String(50), nullable=False)
     password = Column(String(32), nullable=False)
     create_time = Column(TIMESTAMP, default=datetime.now)
 
+
 def init_db():
     Base.metadata.create_all(engine)
 
+
 def drop_db():
     Base.metadata.drop_all(engine)
-
-if __name__=="__main__":
-    init_db()
-    #drop_db()
-    # user_data = User()
-    # user_data.username = 'admin'
-    # user_data.email = ''
-    # user_data.password = '21232f297a57a5a743894a0e4a801fc3'
-    # DBSession.add(user_data)
-    # DBSession.flush()
-    # DBSession.commit()
-    print('create user table')
-
 
 
 '''

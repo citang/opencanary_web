@@ -12,11 +12,6 @@ from email.mime.text import MIMEText
 from util.config import ini_info
 from application import emailfile, mail_host, mail_user, mail_pass, mail_postfix
 import sys
-if sys.version[0] == '2':
-    reload(sys)
-    sys.setdefaultencoding("utf-8")
-else:
-    from importlib import reload
 
 
 def maillists():
@@ -37,11 +32,11 @@ def send_mail(sub, content):
     msg = MIMEText(content, _subtype='html', _charset='utf-8')
     msg['Subject'] = sub
     msg['From'] = me
-    msg['To'] = ";".join(to_list)  #将收件人列表以‘;’分隔
+    msg['To'] = ";".join(to_list)  # 将收件人列表以‘;’分隔
     try:
         server = smtplib.SMTP()
-        server.connect(mail_host)  #连接服务器
-        server.login(mail_user, mail_pass)  #登录操作
+        server.connect(mail_host)  # 连接服务器
+        server.login(mail_user, mail_pass)  # 登录操作
         server.sendmail(me, to_list, msg.as_string())
         server.close()
         print("email send success.")
@@ -58,7 +53,7 @@ def switches():
 
 
 def main():
-    send_mail("兄弟电话1", "电话是170")  #邮件主题和邮件内容
+    send_mail("兄弟电话1", "电话是170")  # 邮件主题和邮件内容
 
 
 if __name__ == '__main__':

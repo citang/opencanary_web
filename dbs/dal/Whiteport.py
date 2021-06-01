@@ -1,27 +1,16 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-  Author: pirogue 
-  Purpose: 白名单端口表操作
-  Site: http://pirogue.org 
-  Created: 2018-08-03 17:32:54
-"""
-
 
 from dbs.initdb import DBSession
 from dbs.models.Whiteport import Whiteport
-from sqlalchemy import desc,asc
 from sqlalchemy.exc import InvalidRequestError
 
-
-# import sys
-# sys.path.append("..")
 
 class WhitePort:
     """增删改查"""
 
-    def __init__(self):  
-        self.session=DBSession
+    def __init__(self):
+        self.session = DBSession
 
     # 查询白名单表port数据
     def select_white_port(self):
@@ -34,7 +23,7 @@ class WhitePort:
             print(e)
         finally:
             self.session.close()
-    
+
     # 增加白名单
     def insert_white_port(self, dst_port):
         try:

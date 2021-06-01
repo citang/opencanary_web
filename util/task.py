@@ -1,20 +1,13 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-  Author: pirogue 
-  Purpose: 计划任务模块
-  Site: http://pirogue.org 
-  Created: 2018-02-08 11:18:10
-"""
+
 
 from apscheduler.schedulers.background import BackgroundScheduler
-from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
+
 from service.hostservice import hostonline
 import atexit
 import fcntl
-#jobstores = {
-#    'default': SQLAlchemyJobStore(url='sqlite:///jobs.sqlite')
-#}
+
 
 sched = BackgroundScheduler()
 

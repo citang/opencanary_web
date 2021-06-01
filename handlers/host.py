@@ -1,18 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-  Author: pirogue 
-  Purpose: 主机状态汇报接收
-  Site: http://pirogue.org 
-  Created: 2018-08-27 15:35:43
-"""
 
-
-import tornado
 from handlers.base import BaseHandler
 from util.auth import jwtauth
-# from service.whiteportservice import whiteports, insertports, deleteports
-from service.hostservice import hoststatus,getHoststatus
+from service.hostservice import hoststatus, getHoststatus
 import datetime
 import json
 
@@ -21,9 +12,9 @@ import json
 class HostHandler(BaseHandler):
     """ 接收post过来的主机信息 """
 
-    def write_error(self,status_code,**kwargs):
+    def write_error(self, status_code, **kwargs):
         self.write("Unable to parse JSON.")
-    
+
     def post(self):
 
         if self.request.headers["Content-Type"].startswith("application/json"):
@@ -39,6 +30,8 @@ class HostHandler(BaseHandler):
             # 主机信息入库
             if hoststatus(lasttime, hostname, ip, status):
                 self.write("insert status data ok")
+
+
 @jwtauth
 class GetHostHandler(BaseHandler):
     """ 获取主机状态列表前端展示 """

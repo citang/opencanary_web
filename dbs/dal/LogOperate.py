@@ -1,16 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-  Author: pirogue 
-  Purpose: 日志表操作
-  Site: http://pirogue.org 
-  Created: 2018-08-03 17:32:54
-"""
 
 from dbs.initdb import DBSession
 from dbs.models.HoneypotLog import OpencanaryLog
-from dbs.models.Whiteip import Whiteip
-from sqlalchemy import desc, asc, extract, func, distinct
+from sqlalchemy import desc, extract, func
 from sqlalchemy.exc import InvalidRequestError
 
 
